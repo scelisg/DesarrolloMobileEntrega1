@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <app-header [pageTitle]="pageTitle"> </app-header>
+        <ion-button slot="start">
+            <ion-back-button defaultHref="rick"></ion-back-button>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="listadoCharacter">
+        <ion-item *ngFor='let character of listadoCharacter'>
+            <ion-avatar>
+                <img [src]=character.image alt="">
+            </ion-avatar>
+            <ion-label>
+                <h3> {{character.name}}</h3>
+            </ion-label>
+            <ion-icon class="ff" name="arrow-forward" (click)="obtenerDetallePerfil(character)"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>
