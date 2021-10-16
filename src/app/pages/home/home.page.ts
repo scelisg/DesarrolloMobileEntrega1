@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  pageTitle: any='Home';
+
   constructor() {}
 
 }

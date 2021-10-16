@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConversorPage implements OnInit {
 
+  pageTitle: any = 'Conversor';
   constructor() { }
 
   ngOnInit() {

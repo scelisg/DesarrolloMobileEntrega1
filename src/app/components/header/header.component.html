@@ -1,10 +1,66 @@
-<ion-toolbar>
+<ion-header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <style>
+         :root {
+            --ion-safe-area-top: 20px;
+            --ion-safe-area-bottom: 22px;
+        }
+    </style>
+    <script type="module">
+        import { menuController } from 'https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/index.esm.js'; window.menuController = menuController;
+    </script>
+</ion-header>
 
-    <ion-title>
-        {{ pageTitle }}
-    </ion-title>
+<body>
+    <ion-app>
+        <ion-menu side="start" content-id="main-content">
+            <ion-header>
+                <ion-toolbar translucent>
+                    <ion-title>Menu</ion-title>
+                </ion-toolbar>
+            </ion-header>
+            <ion-content>
+                <ion-list>
+                    <ion-item (click)="irClima()">
+                        <ion-icon name="heart" slot="start"></ion-icon>
+                        <ion-label>Clima</ion-label>
+                    </ion-item>
+                    <ion-item (click)="irConversor()">
+                        <ion-icon name="heart" slot="start"></ion-icon>
+                        <ion-label>Conversor de divisas</ion-label>
+                    </ion-item>
+                    <ion-item (click)="irRick()">
+                        <ion-icon name="heart" slot="start"></ion-icon>
+                        <ion-label>Rick y Morty</ion-label>
+                    </ion-item>
 
-    <img src="./../../../assets/icon/rym.jpg" alt="logo-rym" id="logo-rym">
+                </ion-list>
+            </ion-content>
+        </ion-menu>
 
+        <div class="ion-page" id="main-content">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-menu-button></ion-menu-button>
+                    </ion-buttons>
+                    <ion-title> {{pageTitle}} </ion-title>
+                    <ion-avatar slot="end">
+                        <img src="./../../../assets/icon/rym.jpg" alt="">
+                    </ion-avatar>
+                </ion-toolbar>
+            </ion-header>
+        </div>
+    </ion-app>
 
-</ion-toolbar>
+    <script>
+        async function openMenu() {
+            await menuController.open();
+        }
+    </script>
+</body>

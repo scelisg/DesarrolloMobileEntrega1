@@ -1,9 +1,49 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>conversor</ion-title>
-  </ion-toolbar>
+    <!--<app-header [pageTitle]="pageTitle"> </app-header>-->
+    <ion-toolbar>
+        <ion-button slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-button>
+        <ion-title> {{pageTitle}} </ion-title>
+        <ion-avatar slot="end">
+            <img src="./../../../assets/icon/rym.jpg" alt="">
+        </ion-avatar>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+    <ion-app>
+        <ion-content class="ion-page">
+            <div>
+                Monto a convertir:
+                <ion-input id="valor1" type="number" placeholder="123456"></ion-input>
+                <br> Tipo de moneda
+                <ion-item>
+                    <ion-label>Convertir desde: </ion-label>
+                    <ion-select id="desde">
+                        <ion-select-option value="clp">CLP</ion-select-option>
+                        <ion-select-option value="dolar">Dólar</ion-select-option>
+                        <ion-select-option value="euro">Euro</ion-select-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Convertir a: </ion-label>
+                    <ion-select id="desde">
+                        <ion-select-option value="clp">CLP</ion-select-option>
+                        <ion-select-option value="dolar">Dólar</ion-select-option>
+                        <ion-select-option value="euro">Euro</ion-select-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+            <br>
+            <br>
+
+            <ion-button color="dark">Convertir</ion-button>
+            <br>
+            <br> Resultado:
+            <ion-input id="valor2" type="number" placeholder="$$$$" disabled></ion-input>
+            <br>
+        </ion-content>
+    </ion-app>
 </ion-content>
