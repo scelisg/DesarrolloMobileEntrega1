@@ -17,33 +17,32 @@
         <ion-content class="ion-page">
             <div>
                 Monto a convertir:
-                <ion-input id="valor1" type="number" placeholder="123456"></ion-input>
+                <ion-input id="valor1" type="number" placeholder="123456" [(ngModel)]="cantidad"></ion-input>
                 <br> Tipo de moneda
                 <ion-item>
                     <ion-label>Convertir desde: </ion-label>
-                    <ion-select id="desde">
-                        <ion-select-option value="clp">CLP</ion-select-option>
-                        <ion-select-option value="dolar">Dólar</ion-select-option>
-                        <ion-select-option value="euro">Euro</ion-select-option>
+                    <ion-select id="monedaDesde" [(ngModel)]="monedaDesde">
+                        <ion-select-option value="1">CLP</ion-select-option>
+                        <ion-select-option value="2">Dolar</ion-select-option>
+                        <ion-select-option value="3">Euro</ion-select-option>
                     </ion-select>
                 </ion-item>
                 <ion-item>
                     <ion-label>Convertir a: </ion-label>
-                    <ion-select id="desde">
-                        <ion-select-option value="clp">CLP</ion-select-option>
-                        <ion-select-option value="dolar">Dólar</ion-select-option>
-                        <ion-select-option value="euro">Euro</ion-select-option>
+                    <ion-select id="MonedaA" [(ngModel)]="monedaA">
+                        <ion-select-option value="1">CLP</ion-select-option>
+                        <ion-select-option value="2">Dolar</ion-select-option>
+                        <ion-select-option value="3">Euro</ion-select-option>
                     </ion-select>
                 </ion-item>
             </div>
             <br>
             <br>
 
-            <ion-button color="dark">Convertir</ion-button>
+            <ion-button color="dark" (click)="convertirMoneda()">Convertir</ion-button>
             <br>
-            <br> Resultado:
-            <ion-input id="valor2" type="number" placeholder="$$$$" disabled></ion-input>
-            <br>
+            <br> Resultado: {{resultado}}
+
         </ion-content>
     </ion-app>
 </ion-content>

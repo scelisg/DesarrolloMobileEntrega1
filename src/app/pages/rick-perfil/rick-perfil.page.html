@@ -1,9 +1,13 @@
 <ion-header>
+    <!--<app-header [pageTitle]="pageTitle"> </app-header>-->
     <ion-toolbar>
-        <app-header [pageTitle]="pageTitle"> </app-header>
         <ion-button slot="start">
-            <ion-back-button defaultHref="rick"></ion-back-button>
+            <ion-back-button defaultHref="home"></ion-back-button>
         </ion-button>
+        <ion-title> {{pageTitle}} </ion-title>
+        <ion-avatar slot="end">
+            <img src="./../../../assets/icon/rym.jpg" alt="">
+        </ion-avatar>
     </ion-toolbar>
 </ion-header>
 
