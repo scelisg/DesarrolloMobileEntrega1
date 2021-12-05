@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
+  },  {
+    path: 'formulario',
+    loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
+
 ];
 
 @NgModule({
