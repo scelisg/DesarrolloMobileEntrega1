@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'formulario',
     loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
+  {
+    path: 'suscriptor',
+    loadChildren: () => import('./pages/suscriptor/suscriptor.module').then( m => m.SuscriptorPageModule)
+  },
 
 ];
 

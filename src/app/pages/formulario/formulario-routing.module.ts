@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { FormularioPage } from './formulario.page';
 
 const routes: Routes = [

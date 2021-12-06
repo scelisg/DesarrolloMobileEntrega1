@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
     this.navControler.navigateForward(['rick/']);
   }
 
+  irSuscripcion(){
+    this.navControler.navigateForward(['formulario']);
+  }
+
   ngOnInit() {}
 
 }
