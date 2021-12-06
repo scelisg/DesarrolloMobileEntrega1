@@ -12,7 +12,7 @@ import { Formulario } from "./formulario";
 })
 export class DbService {
 
-  private storage: SQLiteObject;
+  private storage: SQLiteObject
   formularioList = new BehaviorSubject ([]);
   private isDbReady: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
@@ -20,13 +20,13 @@ export class DbService {
   constructor(
     private platform: Platform,
     private sqlite: SQLite,
-    private httpClient: HttpClient,
+    private httpClient: HttpClient, 
     private sqlPorter: SQLitePorter,
 
   ) {
     this.platform.ready().then(() => {
       this.sqlite.create({
-        name: 'formulario.db',
+        name: 'formulario_db.db',
         location: 'default'
       })
       .then((db: SQLiteObject) => {
