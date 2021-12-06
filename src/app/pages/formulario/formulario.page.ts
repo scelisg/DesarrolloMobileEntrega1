@@ -33,16 +33,14 @@ export class FormularioPage implements OnInit {
     }));
     this.mainForm = this.formBuilder.group({
       nombre: [''],
-      correo:[''],
-      edad:['']
+      correo:['']
     })
   }
 
   addFormulario(){
     this.db.addFormulario(
       this.mainForm.value.nombre,
-      this.mainForm.value.correo,
-      this.mainForm.value.edad
+      this.mainForm.value.correo
     ).then((res) => {
       this.mainForm.reset();
     });

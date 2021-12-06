@@ -73,7 +73,6 @@ export class DbService {
             id:res.rows.item(i).id,
             nombre:res.rows.item(i).nombre,
             correo:res.rows.item(i).correo,
-            edad:res.rows.item(i).edad 
           });
         }
       }
@@ -82,9 +81,9 @@ export class DbService {
   }
 
    //agregar objetos a la bd
-   addFormulario(nombre, correo, edad){
-    let data =[nombre, correo, edad];
-    return this.storage.executeSql('INSERT INTO formulario (NOMBRE, CORREO, EDAD) VALUES (?,?,?)',data)
+   addFormulario(nombre, correo){
+    let data =[nombre, correo];
+    return this.storage.executeSql('INSERT INTO formulario (NOMBRE, CORREO) VALUES (?,?)',data)
     .then(res => {
       this.getFormulario();
     });
@@ -98,15 +97,14 @@ export class DbService {
         id: res.rows.item(0).id,
         nombre: res.rows.item(0).nombre,
         correo: res.rows.item(0).correo,
-        edad: res.rows.item(0).edad,
       }
     });
   }
 
   //actualizar
   updateSuscripcion(id, formulario:Formulario){
-    let data = [formulario.nombre, formulario.correo, formulario.edad];
-    return this.storage.executeSql(`UPDATE formuario SET nombre = ?, correo = ?, edad = ? WHERE id = ${id}`,data)
+    let data = [formulario.nombre, formulario.correo];
+    return this.storage.executeSql(`UPDATE formulario SET nombre = ?, correo = ? WHERE id = ${id}`,data)
     .then(_ => {
       this.getFormulario();
     });

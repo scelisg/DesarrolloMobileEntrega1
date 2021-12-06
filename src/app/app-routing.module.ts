@@ -26,14 +26,17 @@ const routes: Routes = [
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
-  },  {
+  },
+  {
     path: 'formulario',
     loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule)
   },
+  
   {
-    path: 'suscriptor',
+    path: 'formulario/formulario/:id',
     loadChildren: () => import('./pages/suscriptor/suscriptor.module').then( m => m.SuscriptorPageModule)
   },
+  
 
 ];
 
