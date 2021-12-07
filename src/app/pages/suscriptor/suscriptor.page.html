@@ -16,15 +16,25 @@
     <form [formGroup]="editForm" (ngSubmit)="saveForm()">
       <ion-item>
         <ion-label position="floating">Nombre</ion-label>
-        <ion-input formControlName="nombre" type="text" required></ion-input>
+        <ion-input autocapitalize inputmode = "text" formControlName = "nombre" ></ion-input>    
       </ion-item> 
+      <div *ngFor="let error of errorMessages.nombre">
+        <ng-container *ngIf="nombre.hasError(error.type) && (nombre.dirty || nombre.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>
       <ion-item>
-        <ion-label position="floating">Correo</ion-label>
-        <ion-input formControlName="correo" type="text" required></ion-input>
-      </ion-item> 
+        <ion-label position="floating">Email</ion-label>
+        <ion-input inputmode = "email" formControlName = "email"></ion-input>
+      </ion-item>
+      <div *ngFor="let error of errorMessages.email">
+        <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+          <small class="error-message">{{error.message}}</small>
+        </ng-container>
+      </div>  
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="primary" shape="full" expand="block">
+          <ion-button [disabled]="!editForm.valid" type="submit" color="primary" shape="full" expand="block">
             Actualizar
           </ion-button>
         </ion-col>
